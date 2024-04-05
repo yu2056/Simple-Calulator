@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-
+//Set up of buttons
 function ButtonsContainer({ handleClick, operatorClick, handleEqual }) {
   return (
     <div className="btn-wrapper">

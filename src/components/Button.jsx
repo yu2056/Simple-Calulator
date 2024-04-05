@@ -1,5 +1,5 @@
 import React from "react";
-
+//Button
 function Button({ handleClick, name, value, className, calc }) {
   return (
     <>

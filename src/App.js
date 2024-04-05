@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import ButtonsContainer from "./components/ButtonsContainer";
 import DisplayContainer from "./components/DisplayContainer";
 import "./styles.css";
-
+//Calculator
 function App() {
   const [display, setDisplay] = useState("");
   const [result, setResult] = useState("");
-
+//Display
   function handleClick(e) {
     const targetValue = e.target.name;
     setDisplay(display + targetValue);
   }
-
+//Operator adding 
   function operatorClick(operator) {
     let lastCharacter = display.slice(-2);
     let operatorsArray = ["+ ", "- ", "* ", "/ "];
@@ -37,7 +37,7 @@ function App() {
       setDisplay("Error");
     }
   }
-
+//Calculating
   function calculate(expression) {
     const tokens = expression.split(" ");
     let resultValue = parseInt(tokens[0]);
@@ -65,12 +65,12 @@ function App() {
     }
     return resultValue;
   }
-
+//Result
   function clear() {
     setDisplay("");
     setResult("");
   }
-
+//One symbol cleaning
   function backspace() {
     setDisplay(display.slice(0, -1));
   }
@@ -79,6 +79,7 @@ function App() {
     <>
       <div className="container">
         <div className="calculator">
+          <p className="text-white">Calculator</p>
           <DisplayContainer
             display={display}
             result={result}
@@ -90,7 +91,6 @@ function App() {
             handleClick={handleClick}
             handleEqual={handleEqual}
           />
-          <p className="text-white">Created by Abdur Rehman</p>
         </div>
       </div>
     </>
